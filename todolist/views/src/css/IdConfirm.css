@@ -1,0 +1,87 @@
+.IdConfirm_div{
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+
+.IdConfirm_header{
+    width: 100%;
+    height: 25px;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(231, 231, 231);
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgb(170, 170, 170);
+}
+.now_step{
+    font-size: 20px;
+    font-weight: bold;
+}
+.step_list_ul{
+    display: flex;
+    list-style: none;
+    font-size: 14px;
+}
+.step_list_li:nth-child(1){
+    color: rgb(2, 255, 2);
+}
+
+
+.how_action{
+    width: 100%;
+    font-size: 14px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    color: rgb(231, 231, 231);
+}
+
+
+.IdConfirm_form{
+    width: 100%;
+    height:115px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 16px 7px rgba(0,0,0,0.50);
+    margin-bottom: 25px;
+}
+.IdConfirm_input{
+    width: 250px;
+    height: 20px;
+    border: 1px solid rgb(179, 179, 179);
+    padding: 5px 10px;
+    font-size: 18px;
+}
+.IdConfirm_input:focus{
+    outline: none;
+}
+
+
+.next_btn_div{
+    height:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.next_btn{
+    width: 60px;
+    height: 35px;
+    cursor: pointer;
+    border: 1px solid rgb(209, 209, 209);
+    border-radius: 3px;
+    font-size: 17px;
+}
+
+
+.remember_id_text{
+    color: rgb(236, 236, 236);
+}
+.remember_id_text>a{
+    color: rgb(185, 185, 185);
+}

@@ -1,0 +1,132 @@
+.ToDoList_back {
+  width: 500px;
+  background-color: white;
+  max-height: 700px;
+  margin: auto;
+  box-shadow: 0px 10px 20px 3px rgba(0, 0, 0, 0.69);
+  position: relative;
+}
+
+.date_text{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: establishRoomNo703OTF;
+    padding-top: 15px;
+    border-bottom: 5px solid rgba(14, 5, 139, 0.301);
+}
+.user_id_text{
+    font-size: 25px;
+    margin-right: 15px;
+}
+.year_text{
+    height: 100%;
+    font-size: 55px;
+    margin-right: 20px;
+    line-height: 60px;
+}
+.month_day_text_box{
+    font-size: 20px;
+    margin-right: 15px;
+}
+.month_day_text_box>p>span{
+    margin-left: 8px;
+}
+.calendar_text{
+    font-size: 25px;
+    margin-right: 15px;
+}
+
+.list_add_box{
+    display: flex;
+    display: none;
+}
+.list_add_input{
+    width: 460px;
+    height: 40px;
+    border: none;
+    border-bottom: 2px solid rgb(175, 175, 175);
+    box-sizing: border-box;
+    font-size: 22px;
+    padding: 5px 10px;
+}
+.list_add_input:focus{
+    outline: none
+}
+.list_add_btn{
+    width: 40px;
+    height: 40px;
+    font-size: 35px;
+    line-height: 40px;
+    cursor: pointer;
+    border: 1px solid rgb(175, 175, 175);
+    background-color: rgb(197, 197, 197);
+    box-sizing: border-box;
+}
+
+
+.list_li_div{
+    display: flex;
+    align-items: center;
+    padding: 10px 35px;
+    font-size: 18px;
+}
+.list_checkBox{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+}
+.list_checkBox:checked+.list_li_delete>.list_li{
+    text-decoration: line-through;
+    color: gray;
+}
+.list_li_delete{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.list_li{
+    padding-left: 10px;
+    cursor: pointer;
+}
+.list_li:visited{
+    text-decoration: line-through;
+    color: gray;
+}
+.list_delete{
+    cursor: pointer;
+}
+
+.list_ul{
+    list-style: none;
+    max-height: 620px;
+    padding: 10px 10px;
+    padding-bottom: 25px;
+    overflow-y: scroll;
+}
+.list_ul::-webkit-scrollbar{
+    display:none;
+}
+
+.list_add_block_btn{
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    left: 227.5px;
+    bottom: -22.5px;
+    background: rgb(121, 121, 121);
+    font-size: 40px;
+    line-height: 45px;
+    color: white;
+    box-shadow: 0px 10px 20px 3px rgba(0,0,0,0.69);
+}
+.list_add_block_btn:hover{
+    background: rgb(161, 161, 161);
+}

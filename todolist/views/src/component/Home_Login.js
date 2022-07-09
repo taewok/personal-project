@@ -65,7 +65,7 @@ const Home_Login = () => {
           </div>
           <p>|</p>
           <div>
-            <Link to="/PhoneConfirm" className="sub_menu">
+            <Link to="/PwdConfirm" className="sub_menu">
               아이디 찾기
             </Link>
           </div>

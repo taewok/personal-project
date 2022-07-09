@@ -78,11 +78,23 @@ const post = {
         }
       })
     },
+  },
+  pwdConfirm: (req,res) =>{
+    const name = req.body.name;
+    const phone = req.body.phone;
+    connection.query("SELECT * FROM customer WHERE name =? and phone =?",[name,phone],(err,rows)=>{
+      if(err) throw err;
+      if (rows.length>0) {
+        return res.send({msg:rows[0].id})
+      }else{
+        return res.send({msg:"입력하신 정보가 맞는지 다시 확인해주세요."})
+      }
+    })
   }
 };
 
 const get = {
-
+  
 }
 
 const put = {

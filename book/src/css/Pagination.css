@@ -1,0 +1,19 @@
+nav {
+  display: flex;
+  justify-content: center;
+}
+.number-ul {
+  display: flex;
+  margin-bottom: 40px;
+  padding: 20px 0px;
+  list-style: none;
+}
+.number-ul > li {
+  margin: 0 10px;
+  width: 20px;
+  height: 100%;
+  text-align: center;
+}
+.number-ul > li>span{
+    cursor: pointer;
+}

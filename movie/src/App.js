@@ -1,17 +1,41 @@
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Movies from "./Movies";
 import './App.css';
 
-function App() {
-useEffect(()=>{
-  axios.get(`https://openapi.naver.com/v1/search/movie.json?X-Naver-Client-Id=tZnlIXFC0z2_iK8MWgnt&X-Naver-Client-Secret=frJe8UKSOI`).then((data)=>{
-    console.log(data.data)
-  })
-})
+const App = () => {
+  const [movie, setMovie] = useState([]);
+  const getMovies = async () => {
+    const {
+      data: {
+        data: { movies },
+      },
+    } = await axios.get("https://yts-proxy.now.sh/list_movies.json");
+    setMovie(movies);
+  };
+  useEffect(()=>{
+    getMovies();
+  },[movie])
+
+
+
   return (
-    <div className="App">
-    </div>
+    <section className="container">
+      <div className="movies">
+        {movie.map((m) => (
+          <Movies
+            key={m.id}
+            id={m.id}
+            year={m.year}
+            title={m.title}
+            summary={m.summary}
+            poster={m.medium_cover_image}
+            genres={m.genres}
+          />
+        ))}
+      </div>
+    </section>
   );
-}
+};
 
 export default App;

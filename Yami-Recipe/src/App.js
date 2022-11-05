@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import styled from "styled-components";
+import Header from "./Component/Header";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MainGrid>
+      <Header />
+    </MainGrid>
   );
 }
+
+const MainGrid = styled.div`
+  display: grid;
+  grid-template-rows: 125px 50px;
+  justify-items: center;
+  height: 100vh;
+`;
 
 export default App;

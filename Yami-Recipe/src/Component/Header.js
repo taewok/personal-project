@@ -1,13 +1,35 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import axios from "axios";
 import logo from "../LOGO.png";
 
 const Header = () => {
   const [text, setText] = useState("");
+  const [filter, setFilter] = useState("메뉴");
+
+  //onChange
+  const filterOnChange = (filter) => {
+    setFilter(filter.target.value);
+    console.log(filter.target.value);
+  };
   const textOnChange = (text) => {
     setText(text.target.value);
   };
-  
+
+  //onSubmit
+  const onSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .get(
+        `http://openapi.foodsafetykorea.go.kr/api/51e39188d86c41a290b7/COOKRCP01/json/1/5${
+          filter === "메뉴" ? `/RCP_NM=${text}` : `/RCP_PARTS_DTLS=${text}`
+        }`
+      )
+      .then((data) => {
+        console.log(data.data);
+      });
+  };
+
   return (
     <>
       <HeaderDiv>
@@ -15,8 +37,11 @@ const Header = () => {
           <Logoli>
             <img src={logo} alt="logo"></img>
           </Logoli>
-          <SearchForm>
-            <select>
+          <SearchForm onSubmit={(e) => onSubmit(e)}>
+            <select
+              value={filter}
+              onChange={(filter) => filterOnChange(filter)}
+            >
               <option>메뉴</option>
               <option>재료</option>
             </select>
@@ -49,7 +74,7 @@ const Logoli = styled.li`
   margin-top: -10px;
   img {
     width: 350px;
-    height:145px;
+    height: 145px;
   }
 `;
 const SearchForm = styled.form`

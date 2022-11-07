@@ -31,7 +31,6 @@ const Header = () => {
   };
 
   return (
-    <>
       <HeaderDiv>
         <HeaderUl>
           <Logoli>
@@ -53,7 +52,6 @@ const Header = () => {
           </Menuli>
         </HeaderUl>
       </HeaderDiv>
-    </>
   );
 };
 

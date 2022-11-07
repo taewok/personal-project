@@ -1,19 +1,29 @@
 import { useState } from "react";
+import {Routes,Route} from "react-router-dom";
 import styled from "styled-components";
 import Header from "./Component/Header";
+import Home from "./Component/Home";
+import Nav from "./Component/Nav";
+import Search from "./Component/Search";
 
 function App() {
+  const [list,setList] = useState("");
   return (
     <MainGrid>
-      <Header />
+      <Header setList={setList}/>
+      <Nav/>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="search" element={<Search list={list}/>}/>
+      </Routes>
     </MainGrid>
   );
 }
 
 const MainGrid = styled.div`
-  display: grid;
-  grid-template-rows: 125px 50px;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 100vh;
 `;
 

@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import logo from "../LOGO.png";
+import { useNavigate } from "react-router-dom";
 
-const Header = () => {
+const Header = ({setList}) => {
+  const navigate = useNavigate();
   const [text, setText] = useState("");
   const [filter, setFilter] = useState("메뉴");
 
@@ -26,7 +28,9 @@ const Header = () => {
         }`
       )
       .then((data) => {
-        console.log(data.data);
+        console.log(data.data.COOKRCP01.row);
+        setList(data.data.COOKRCP01.row);
+        navigate("search")
       });
   };
 

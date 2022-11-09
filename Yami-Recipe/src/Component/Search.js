@@ -9,9 +9,17 @@ const Search = ({ list }) => {
         {list &&
           list.map((list, index) => (
             <SearchLi key={index}>
-                <Link to={`detail/${list.RCP_NM}`} state={{list}}>
-                    <img src={list.ATT_FILE_NO_MK} alt={list.RCP_NM}></img>
-                </Link>
+              <Link to={`detail/${list.RCP_NM}`} state={{ list }}>
+                <img src={list.ATT_FILE_NO_MK} alt={list.RCP_NM}></img>
+              </Link>
+              <MenuExplanationDiv>
+                <MenuName>{list.RCP_NM}</MenuName>
+                <CookingTypeDiv>
+                  <span>종류: {list.RCP_WAY2}</span>
+                  <span>카테고리: {list.RCP_PAT2}</span>
+                </CookingTypeDiv>
+                <MenuMaterials>{list.RCP_PARTS_DTLS}</MenuMaterials>
+              </MenuExplanationDiv>
             </SearchLi>
           ))}
       </SearchUl>
@@ -28,13 +36,40 @@ const SearchUl = styled.ul`
   list-style: none;
 `;
 const SearchLi = styled.li`
-    a{  
-        width: 100%;
-        height: 400px;
-        img{
-            height: 100%;
-        }
+  display: flex;
+  width: 100%;
+  height: 200px;
+  padding: 15px;
+  border-bottom: 2px solid #dfdfdf;
+  a {
+    height: 100%;
+    img {
+      width: 250px;
+      height: 100%;
     }
+  }
+`;
+const CookingTypeDiv = styled.div`
+  display: flex;
+  color:#555555;
+  font-weight: bold;
+  span:nth-child(1){
+    margin-right: 20px;
+  }
+`;
+const MenuExplanationDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+`;
+const MenuName = styled.span`
+  color: #555555;
+  font-size: 1.2rem;
+  font-weight: bold;
+`;
+const MenuMaterials = styled.p`
+  color:#555555;
 `;
 
 export default Search;

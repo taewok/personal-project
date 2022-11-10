@@ -18,6 +18,7 @@ const NavDiv = styled.nav`
   width: 100%;
   height: 50px;
   margin-top: 20px;
+  margin-bottom:50px;
   background-color: #69b645;
   border-bottom: 3px solid #FF7A00;
 `;

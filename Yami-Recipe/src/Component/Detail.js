@@ -57,23 +57,23 @@ const Detail = () => {
           <NutrientUl>
             <NutrientLi>
               <span>열량</span>
-              <span>{location.state.list.INFO_ENG}</span>
+              <span>{location.state.list.INFO_ENG}Kcal</span>
             </NutrientLi>
             <NutrientLi>
               <span>탄수화물</span>
-              <span>{location.state.list.INFO_CAR}</span>
+              <span>{location.state.list.INFO_CAR}g</span>
             </NutrientLi>
             <NutrientLi>
               <span>단백질</span>
-              <span>{location.state.list.INFO_PRO}</span>
+              <span>{location.state.list.INFO_PRO}g</span>
             </NutrientLi>
             <NutrientLi>
               <span>지방</span>
-              <span>{location.state.list.INFO_FAT}</span>
+              <span>{location.state.list.INFO_FAT}g</span>
             </NutrientLi>
             <NutrientLi>
               <span>나트륨</span>
-              <span>{location.state.list.INFO_NA}</span>
+              <span>{location.state.list.INFO_NA}mg</span>
             </NutrientLi>
           </NutrientUl>
         </NutrientDiv>
@@ -97,7 +97,9 @@ const ThumbnailDiv = styled.div`
 `;
 const IngredientNutrientDiv = styled.div`
   width: 700px;
-  border-top: 2px solid #dfdfdf;
+  padding: 0 70px;
+  border-top: 2.5px solid #dfdfdf;
+  border-bottom: 2.5px solid #dfdfdf;
 `;
 const IngredientDiv = styled.div`
   p {
@@ -106,6 +108,7 @@ const IngredientDiv = styled.div`
     span {
       font-size: 1rem;
       padding-left: 5px;
+      color:#757575;
     }
   }
 `;
@@ -117,6 +120,7 @@ const IngredientUl = styled.ul`
 `;
 const IngredientLi = styled.li`
   width: 250px;
+  margin-bottom: 5px;
   padding: 10px 0;
   border-bottom: 2px solid #dfdfdf;
 `;

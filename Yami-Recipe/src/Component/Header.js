@@ -23,7 +23,7 @@ const Header = ({setList}) => {
     e.preventDefault();
     axios
       .get(
-        `http://openapi.foodsafetykorea.go.kr/api/51e39188d86c41a290b7/COOKRCP01/json/1/5${
+        `http://openapi.foodsafetykorea.go.kr/api/51e39188d86c41a290b7/COOKRCP01/json/1/50${
           filter === "메뉴" ? `/RCP_NM=${text}` : `/RCP_PARTS_DTLS=${text}`
         }`
       )

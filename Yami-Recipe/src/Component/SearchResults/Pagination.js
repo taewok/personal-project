@@ -18,6 +18,8 @@ const Pagination = ({ postsPerPage, totalPosts, setCurrentPageNumber }) => {
       num:list
     }})
   }
+
+  //사용자가 이전 버튼을 눌러 첫 렌더링시 url주소에 num을 가져와 페이지 번호에 알맞은 데이터 리스를 출력
   useEffect(()=>{
     console.log(location.state.num)
     setCurrentPageNumber(location.state.num);

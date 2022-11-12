@@ -18,9 +18,9 @@ const NavDiv = styled.nav`
   width: 100%;
   height: 50px;
   margin-top: 20px;
-  margin-bottom:50px;
+  margin-bottom: 50px;
   background-color: #69b645;
-  border-bottom: 3px solid #FF7A00;
+  border-bottom: 3px solid #ff7a00;
 `;
 const MenuUl = styled.ul`
   display: flex;
@@ -33,13 +33,14 @@ const MenuUl = styled.ul`
   list-style: none;
 `;
 const MenuItem = styled.li`
-    font-size: 22px;
-    color: white;
-    font-weight: 400;
-    cursor: pointer;
-    &:hover{
-        color:#FAFF00;
-    }
+  padding: 5px 0px;
+  font-size: 22px;
+  color: white;
+  font-weight: 400;
+  cursor: pointer;
+  &:hover {
+    color: #faff00;
+  }
 `;
 
 export default Nav;

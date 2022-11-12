@@ -30,7 +30,11 @@ const Header = ({setList}) => {
       .then((data) => {
         console.log(data.data.COOKRCP01.row);
         setList(data.data.COOKRCP01.row);
-        navigate("search")
+        navigate("search/1",{
+          state:{
+            num:1
+          }
+        })
       });
   };
 

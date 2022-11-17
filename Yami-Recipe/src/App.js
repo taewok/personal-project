@@ -5,7 +5,7 @@ import Detail from "./Component/Detail";
 import Header from "./Component/Header";
 import Home from "./Component/Home";
 import Nav from "./Component/Nav";
-import Search from "./Component/Search";
+import Search from "./Component/SearchResults/Search";
 
 function App() {
   const [list, setList] = useState();
@@ -15,7 +15,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="search" element={<Search list={list} />} />
+        <Route path="search/*" element={<Search list={list} />} />
         <Route path="search/detail/*" element={<Detail />} />
       </Routes>
     </MainGrid>

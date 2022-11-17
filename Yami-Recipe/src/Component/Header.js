@@ -3,8 +3,9 @@ import styled from "styled-components";
 import axios from "axios";
 import logo from "../LOGO.png";
 import { useNavigate } from "react-router-dom";
+import {GoThreeBars} from "react-icons/go";
 
-const Header = ({setList}) => {
+const Header = ({ setList }) => {
   const navigate = useNavigate();
   const [text, setText] = useState("");
   const [filter, setFilter] = useState("메뉴");
@@ -30,41 +31,42 @@ const Header = ({setList}) => {
       .then((data) => {
         console.log(data.data.COOKRCP01.row);
         setList(data.data.COOKRCP01.row);
-        navigate("search/1",{
-          state:{
-            num:1
-          }
-        })
+        navigate("search/1", {
+          state: {
+            num: 1,
+          },
+        });
       });
   };
 
   return (
-      <HeaderDiv>
-        <HeaderUl>
-          <Logoli>
-            <img src={logo} alt="logo"></img>
-          </Logoli>
-          <SearchForm onSubmit={(e) => onSubmit(e)}>
-            <select
-              value={filter}
-              onChange={(filter) => filterOnChange(filter)}
-            >
-              <option>메뉴</option>
-              <option>재료</option>
-            </select>
-            <input value={text} onChange={(text) => textOnChange(text)} />
-          </SearchForm>
-          <Menuli>
-            <span>로그인</span>
-            <span>회원가입</span>
-          </Menuli>
-        </HeaderUl>
-      </HeaderDiv>
+    <HeaderDiv>
+      <HeaderUl>
+        <Logoli>
+          <img src={logo} alt="logo"></img>
+        </Logoli>
+        <SearchForm onSubmit={(e) => onSubmit(e)}>
+          <select value={filter} onChange={(filter) => filterOnChange(filter)}>
+            <option>메뉴</option>
+            <option>재료</option>
+          </select>
+          <input value={text} onChange={(text) => textOnChange(text)} />
+        </SearchForm>
+        <Menuli>
+          <span>로그인</span>
+          <span>회원가입</span>
+          <GoThreeBars/>
+        </Menuli>
+      </HeaderUl>
+    </HeaderDiv>
   );
 };
 
 const HeaderDiv = styled.header`
   width: 1280px;
+  @media screen and (max-width: 1300px) {
+    width: 100%;
+  }
 `;
 const HeaderUl = styled.ul`
   display: flex;
@@ -74,6 +76,9 @@ const HeaderUl = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
+  @media screen and (max-width: 1000px) {
+    justify-content: center;
+  }
 `;
 const Logoli = styled.li`
   margin-left: -50px;
@@ -123,6 +128,10 @@ const Menuli = styled.li`
     font-size: 20px;
     font-weight: 700;
     margin-left: 15px;
+  }
+  @media screen and (max-width: 1000px) {
+    position: absolute;
+    left:0;
   }
 `;
 
